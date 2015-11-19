@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# Clone a package from source.
+echo "Clone a package from source."
 git clone https://github.com/commonform/commonform-cli commonform-cli
 
-# Link it.
-( cd commonform-cli && npm link )
+echo "Link it."
+cd commonform-cli
+npm link
+cd
 
-# Show it's linked.
+echo "Show it's linked."
 commonform --version
 
-# Remove the linked directory.
+echo "Remove the linked directory."
 rm -rf commonform-cli
 
-# Attempt to install from the public repository.
+echo "Attempt to install from the public repository."
 npm i -g commonform-cli
